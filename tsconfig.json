@@ -29,7 +29,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "types": ["@emotion/react/types/css-prop"]
   },
   "include": [
     "next-env.d.ts",
