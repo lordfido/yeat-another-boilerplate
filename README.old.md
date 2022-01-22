@@ -1,1 +1,0 @@
-# yeat-another-boilerplate
