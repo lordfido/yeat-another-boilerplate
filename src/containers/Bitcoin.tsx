@@ -2,6 +2,7 @@ import React from 'react';
 import Dropdown, { DropdownItem, MultipleValue } from '../components/Forms/Dropdown';
 import { currencies } from '../constants';
 import { useBitcoinData } from '../hooks/currencies';
+import { toDecimals } from '../utils';
 
 const Bitcoin: React.FC = () => {
   const { setCurrency, value } = useBitcoinData();
@@ -24,7 +25,7 @@ const Bitcoin: React.FC = () => {
       <p>Bitcoin value:</p>
       
       { !!value && (
-        <p>{ value.value } {value.currency }</p>
+        <p>{ toDecimals(value.value) } {value.currency }</p>
       ) }
     </div>
   )
