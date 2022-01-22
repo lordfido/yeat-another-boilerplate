@@ -1,11 +1,26 @@
 import React from 'react';
+import Dropdown, { DropdownItem, MultipleValue } from '../components/Forms/Dropdown';
+import { currencies } from '../constants';
 import { useBitcoinData } from '../hooks/currencies';
 
 const Bitcoin: React.FC = () => {
-  const { value } = useBitcoinData();
+  const { setCurrency, value } = useBitcoinData();
+
+  const handleCurrencyChange = (newValue: DropdownItem | MultipleValue) => {
+    const val = newValue as DropdownItem;
+    setCurrency({ key: val.value, name: val.label });
+  }
 
   return (
     <div>
+      <Dropdown
+        onChange={ handleCurrencyChange }
+        options={ currencies.map(c => ({
+          label: c.name,
+          value: c.key,
+        })) }
+      />
+
       <p>Bitcoin value:</p>
       
       { !!value && (
