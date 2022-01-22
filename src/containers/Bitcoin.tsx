@@ -1,11 +1,12 @@
 import React from 'react';
+import AreaChart from '../components/Charts/AreaChart';
 import Dropdown, { DropdownItem, MultipleValue } from '../components/Forms/Dropdown';
 import { currencies } from '../constants';
 import { useBitcoinData } from '../hooks/currencies';
 import { toDecimals } from '../utils';
 
 const Bitcoin: React.FC = () => {
-  const { setCurrency, value } = useBitcoinData();
+  const { historical, setCurrency, value } = useBitcoinData();
 
   const handleCurrencyChange = (newValue: DropdownItem | MultipleValue) => {
     const val = newValue as DropdownItem;
@@ -27,6 +28,15 @@ const Bitcoin: React.FC = () => {
       { !!value && (
         <p>{ toDecimals(value.value) } {value.currency }</p>
       ) }
+
+      <AreaChart
+        data={(historical?.values ?? []).map(val => ({
+          key: val.date.toLocaleDateString(),
+          value: val.value,
+        })) }
+        metricName={ 'Date' }
+        units={ value?.currency }
+      />
     </div>
   )
 };
