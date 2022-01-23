@@ -1,14 +1,13 @@
 import React from 'react'
 import './App.css';
+import MainLayout from './components/Layouts/MainLayout';
 import Bitcoin from './containers/Bitcoin';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <main>
-        <Bitcoin />
-      </main>
-    </div>
+    <MainLayout className="App">
+      <Bitcoin />
+    </MainLayout>
   );
 }
 
