@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import coinDeskApi from "../apiClient";
-import { currencies } from "../constants/currencies";
 import { createBitcoinHistoricalFromServer, createBitcoinValueFromServer } from "../modelCreators";
 import { BitcoinHistorical, BitcoinValue, Currency } from "../types";
 
@@ -10,8 +9,8 @@ interface ReturnType {
   value: BitcoinValue | undefined;
 }
 
-export const useBitcoinData = (): ReturnType => {
-  const [currency, setCurrency] = useState<Currency>(currencies[0]);
+export const useBitcoinData = (defaultCurrency: Currency): ReturnType => {
+  const [currency, setCurrency] = useState<Currency>(defaultCurrency);
 
   const [value, setValue] = useState<BitcoinValue>();
   const downloadCurrency = async (curr: Currency) => {
