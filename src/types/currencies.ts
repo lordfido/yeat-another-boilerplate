@@ -11,7 +11,7 @@ export interface BitcoinValue {
 export interface BitcoinHistorical {
   currency: string;
   values: Array<{
-    date: Date;
+    key: string;
     value: number;
   }>
 }

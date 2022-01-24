@@ -1,5 +1,6 @@
 import { BitcoinHistoricalFromServer, BitcoinValueFromServer } from "../apiClient/types";
 import { BitcoinHistorical, BitcoinValue, Currency } from "../types";
+import { toDateString } from "../utils";
 
 export const createBitcoinValueFromServer = (
   { bpi }: BitcoinValueFromServer,
@@ -15,7 +16,7 @@ export const createBitcoinHistoricalFromServer = (
 ): BitcoinHistorical => ({
   currency: key,
   values: Object.keys(bpi).map(dateString => ({
-    date: new Date(dateString),
+    key: toDateString(new Date(dateString)),
     value: bpi[dateString],
   }))
 })
