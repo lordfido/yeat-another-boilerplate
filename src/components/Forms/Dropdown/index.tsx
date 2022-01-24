@@ -41,6 +41,7 @@ const Dropdown: React.FC<Props> = ({ defaultValue, isMultiple = false, onChange,
         container: (base) => ({
           ...base,
           minWidth: 224,
+          textAlign: 'left'
         })
       }}
     />

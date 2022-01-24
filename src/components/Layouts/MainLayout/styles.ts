@@ -11,6 +11,7 @@ const headerCss = css`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-height: 100%;
 
   ::before {
     ${ headerCss }
@@ -28,7 +29,7 @@ export const Header = styled.header`
 Header.displayName = 'Header';
 
 export const Content = styled.main`
-  display: flex:
+  display: flex;
   flex: 1;
   max-width: 1280px;
   margin: 0 auto;
