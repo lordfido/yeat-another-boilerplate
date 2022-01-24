@@ -28,6 +28,8 @@ export const Header = styled.header`
 Header.displayName = 'Header';
 
 export const Content = styled.main`
+  display: flex:
+  flex: 1;
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
