@@ -8,8 +8,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint",
     "types": "tsc --noEmit",
-    "test": "react-scripts test --verbose",
-    "check-integrity": "npm run lint && npm run types && npm run test -- --watchAll=false"
+    "test": "react-scripts test --verbose --watchAll=false",
+    "check-integrity": "npm run lint && npm run types && npm run test",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +47,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.21",
     "msw": "^0.36.5",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "husky": "^7.0.0"
   }
 }
