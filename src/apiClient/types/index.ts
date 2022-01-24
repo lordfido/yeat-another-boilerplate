@@ -1,3 +1,8 @@
+export interface Endpoint {
+  method: 'get' | 'post' | 'put' | 'patch' | 'delete';
+  path: string;
+}
+
 export interface BitcoinValueFromServer {
   bpi: {
     [key: string]: {
