@@ -40,7 +40,7 @@ export const useResize = (element?: React.RefObject<Element>) => {
       const clientRect = element.current.getBoundingClientRect();
       rect = {
         width: clientRect.width,
-        height: clientRect.height > 300 ? 300 : clientRect.height,
+        height: clientRect.height,
         left: clientRect.left,
         right: clientRect.right,
         top: clientRect.top,
